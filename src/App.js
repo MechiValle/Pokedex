@@ -16,6 +16,7 @@ import searchPokemon, { getPokemonData, getPokemons } from "./api";
 import { FavoriteProvider } from "./favoritesContext";
 
 const { useState, useEffect } = React;
+const localStorageKey = "favorite_pokemon";
 
 export default function App() {
   const [pokemons, setPokemons] = useState([]);
@@ -23,7 +24,7 @@ export default function App() {
   const [page, setPage] = useState(0);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [fav, setFav] = useState(["bulbasaur"]);
+  const [fav, setFav] = useState([]);
 
   /* Not Found */
   const [notFound, setNotFound] = useState(false);
@@ -43,6 +44,15 @@ export default function App() {
       setNotFound(false);
     } catch (err) {}
   };
+
+  const loadFavPokemons = () =>{
+    const pokemons = JSON.parse(window.localStorage.getItem(localStorageKey)) || [];
+    setFav(pokemons);
+  }
+
+  useEffect(() =>{
+    loadFavPokemons();
+  }, [])
 
   useEffect(() => {
     if (!searching) {
@@ -80,6 +90,9 @@ export default function App() {
       updated.push(name);
     }
     setFav(updated);
+    window.localStorage.setItem(localStorageKey, 
+      JSON.stringify(updated)
+      )
   };
 
   return (

@@ -1,13 +1,30 @@
 import React from "react";
+import {
+  Route,
+  Routes,
+  Link
+} from "react-router-dom";
+import FavoriteContext from "./favoritesContext";
+const {useContext} = React;
 
 const Pokemon = (props) => {
   const { pokemon } = props;
-  const redirectToWiki = () => {
+  const {favoritePokemons, updateFav} = useContext(FavoriteContext);
+
+  /*const redirectToWiki = () => {
     window.open(
       `https://bulbapedia.bulbagarden.net/wiki/${pokemon.name}_(Pokémon)`,
       "_blank"
     );
-  };
+  };*/
+
+  const toFave = "🖤";
+  const faved = "❤️";
+  const heart = favoritePokemons.includes(pokemon.name) ? faved : toFave;
+  const clickHeart = (e) => {
+    e.preventDefault();
+    updateFav(pokemon.name);
+  }
 
   const getBackColor = (pokemon, type) => {
     let backColor = type === "img" ? "#fffcdb" : "#EEE8AA";
@@ -61,7 +78,7 @@ const Pokemon = (props) => {
   return (
     <div
       className="pokemon-card"
-      onClick={redirectToWiki}
+      /*onClick={redirectToWiki}*/
       style={{ backgroundColor: getBackColor(pokemon) }}
     >
       <div className="pokemon-img-container">
@@ -74,7 +91,9 @@ const Pokemon = (props) => {
 
       <div className="card-body">
         <div className="card-top">
+        <Link to={`/Pokemon/${pokemon.id}`}>
           <h3>{pokemon.name}</h3>
+          </Link>
           <div>#{pokemon.id}</div>
         </div>
 
@@ -84,11 +103,14 @@ const Pokemon = (props) => {
               return (
                 <div className="pokemon-type-text" key={index}>
                   {type.type.name}
+
                 </div>
               );
             })}
           </div>
-          <div></div>
+          <button onClick={clickHeart}>
+          <div>{heart}</div>
+          </button>
         </div>
       </div>
     </div>

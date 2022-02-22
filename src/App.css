@@ -3,6 +3,33 @@ body {
   padding-top: 30px;
 }
 
+a{
+  color: white;
+  text-decoration: none;
+}
+
+a:visited{
+  color: red;
+}
+
+.nav{
+  display: flex;
+  flex-direction: row;
+  width: 270px;
+  margin: 0px auto;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.favorite{
+  display: flex;
+  width: 270px;
+  margin: 0px auto;
+  align-items: center;
+  justify-content: center;
+}
+
 .searchbar-container {
   display: flex;
   width: 270px;
@@ -55,6 +82,10 @@ h1 {
   -webkit-text-stroke: 1px black;
   font-family: Pokemon-Solid;
   letter-spacing: 2px;
+}
+
+h3{
+  color: white;
 }
 
 .pokedex-grid {

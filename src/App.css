@@ -16,6 +16,15 @@ a:visited{
   border: none;
 }
 
+p{
+  color: white;
+}
+
+.pokemon-data-img{
+  width: 30%;
+}
+
+
 
 .nav{
   display: flex;
@@ -117,6 +126,15 @@ h3{
   height: 80px;
 }
 
+.pokemon-data-display{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 10px 10px 10px;
+  flex: 1;
+  align-items: center;
+}
+
 .card-body {
   display: flex;
   flex-direction: column;
@@ -133,6 +151,10 @@ h3{
 }
 
 .card-top h3 {
+  text-transform: capitalize;
+}
+
+.data-name {
   text-transform: capitalize;
 }
 
@@ -171,6 +193,13 @@ h3{
 .pagination-btn-left, .pagination-btn-right {
   background: none;
   border: none;
+}
+
+.type-name-span{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;  
 }
 
 .App-header {

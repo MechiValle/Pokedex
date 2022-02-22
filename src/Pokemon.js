@@ -1,15 +1,11 @@
 import React from "react";
-import {
-  Route,
-  Routes,
-  Link
-} from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import FavoriteContext from "./favoritesContext";
-const {useContext} = React;
+const { useContext } = React;
 
 const Pokemon = (props) => {
   const { pokemon } = props;
-  const {favoritePokemons, updateFav} = useContext(FavoriteContext);
+  const { favoritePokemons, updateFav } = useContext(FavoriteContext);
 
   /*const redirectToWiki = () => {
     window.open(
@@ -24,7 +20,7 @@ const Pokemon = (props) => {
   const clickHeart = (e) => {
     e.preventDefault();
     updateFav(pokemon.name);
-  }
+  };
 
   const getBackColor = (pokemon, type) => {
     let backColor = type === "img" ? "#fffcdb" : "#EEE8AA";
@@ -53,23 +49,17 @@ const Pokemon = (props) => {
       backColor = type === "img" ? "#B8A038" : "#B8A038";
     } else if (pokeTypes.includes("poison")) {
       backColor = type === "img" ? "#cf9fcf" : "#cf9fcf";
-    }
-    else if (pokeTypes.includes("psychic")) {
+    } else if (pokeTypes.includes("psychic")) {
       backColor = type === "img" ? "#fa9ab7" : "#fa9ab7";
-    }
-    else if (pokeTypes.includes("ice")) {
+    } else if (pokeTypes.includes("ice")) {
       backColor = type === "img" ? "#f3f6f4" : "#f3f6f4";
-    }
-    else if (pokeTypes.includes("dark")) {
+    } else if (pokeTypes.includes("dark")) {
       backColor = type === "img" ? "#9a8a7e" : "#9a8a7e";
-    }
-    else if (pokeTypes.includes("flying")) {
+    } else if (pokeTypes.includes("flying")) {
       backColor = type === "img" ? "#A890F0" : "#A890F0";
-    }
-    else if (pokeTypes.includes("dragon")) {
+    } else if (pokeTypes.includes("dragon")) {
       backColor = type === "img" ? "#e2d7fd" : "#e2d7fd";
-    }
-    else if (pokeTypes.includes("steel")) {
+    } else if (pokeTypes.includes("steel")) {
       backColor = type === "img" ? "#B8B8D0" : "#B8B8D0";
     }
     return backColor;
@@ -91,8 +81,8 @@ const Pokemon = (props) => {
 
       <div className="card-body">
         <div className="card-top">
-        <Link to={`/Pokemon/${pokemon.id}`}>
-          <h3>{pokemon.name}</h3>
+          <Link to={`/Pokemon/${pokemon.name}`}>
+            <h3>{pokemon.name}</h3>
           </Link>
           <div>#{pokemon.id}</div>
         </div>
@@ -103,13 +93,12 @@ const Pokemon = (props) => {
               return (
                 <div className="pokemon-type-text" key={index}>
                   {type.type.name}
-
                 </div>
               );
             })}
           </div>
           <button className="fav-btn" onClick={clickHeart}>
-          <div>{heart}</div>
+            <div>{heart}</div>
           </button>
         </div>
       </div>

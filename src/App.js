@@ -35,7 +35,7 @@ export default function App() {
       setLoading(true);
       const data = await getPokemons(24, 24 * page);
       const promises = data.results.map(async (pokemon) => {
-        return await getPokemonData(pokemon.url);
+        return await getPokemonData(pokemon.name);
       });
       const results = await Promise.all(promises);
       setPokemons(results);
@@ -125,7 +125,7 @@ export default function App() {
             </div>
           }
         />
-        <Route path="/Pokemon/:id" element={Pokedata} />
+        <Route path="/Pokemon/:name" element={<Pokedata/>} />
       </Routes>
       </FavoriteProvider>
     </Router>

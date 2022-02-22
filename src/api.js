@@ -1,7 +1,9 @@
+const url = `https://pokeapi.co/api/v2/pokemon/`
+
 export const searchPokemon = async(pokemon) => {
     try{
-        let url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-        const response = await fetch(url);
+        let pokemonSearchURL = url+pokemon
+        const response = await fetch(pokemonSearchURL);
         const data = await response.json();
         return data;
     } catch(err){
@@ -21,9 +23,10 @@ export const getPokemons = async(limit=24, offset=0) =>{
 
 }
 
-export const getPokemonData = async(url) => {
+export const getPokemonData = async(pokemon) => {
     try{
-        const response = await fetch(url);
+        let pokemonURL = url+pokemon
+        const response = await fetch(pokemonURL);
         const data = await response.json();
         return data;
     }catch(err){
@@ -31,5 +34,15 @@ export const getPokemonData = async(url) => {
     }
 }
 
+export const getSpeciesData = async(pokemon) => {
+    try{
+        let speciesURL = `https://pokeapi.co/api/v2/pokemon-species/${pokemon}`
+        const response = await fetch(speciesURL);
+        const data = await response.json();
+        return data;
+    }catch(err){
+
+    }
+}
 
 export default searchPokemon;

@@ -11,6 +11,11 @@ a{
 a:visited{
   color: red;
 }
+.fav-btn{
+  background: none;
+  border: none;
+}
+
 
 .nav{
   display: flex;
@@ -163,13 +168,8 @@ h3{
   padding: 20px;
 }
 
-.pagination-btn-left {
-  background-color: #0075be;
-  border: none;
-}
-
-.pagination-btn-right {
-  background-color: #0075be;
+.pagination-btn-left, .pagination-btn-right {
+  background: none;
   border: none;
 }
 

@@ -17,13 +17,17 @@ const Searchbar = (props) => {
       onSearch(search);
     }
 
-
+    
   return (
     <div className="searchbar-container">
       <div className="searchbar">
         <input placeholder="Search Pokemon..." 
         onChange = {onChange}
-        
+        onKeyPress={event => {
+          if (event.key === 'Enter') {
+            onClick()
+          }
+        }}
         />
       </div>
       <div className="searchbar-btn">

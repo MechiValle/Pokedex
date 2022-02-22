@@ -37,6 +37,24 @@ const Pokemon = (props) => {
     } else if (pokeTypes.includes("poison")) {
       backColor = type === "img" ? "#cf9fcf" : "#cf9fcf";
     }
+    else if (pokeTypes.includes("psychic")) {
+      backColor = type === "img" ? "#fa9ab7" : "#fa9ab7";
+    }
+    else if (pokeTypes.includes("ice")) {
+      backColor = type === "img" ? "#f3f6f4" : "#f3f6f4";
+    }
+    else if (pokeTypes.includes("dark")) {
+      backColor = type === "img" ? "#9a8a7e" : "#9a8a7e";
+    }
+    else if (pokeTypes.includes("flying")) {
+      backColor = type === "img" ? "#A890F0" : "#A890F0";
+    }
+    else if (pokeTypes.includes("dragon")) {
+      backColor = type === "img" ? "#e2d7fd" : "#e2d7fd";
+    }
+    else if (pokeTypes.includes("steel")) {
+      backColor = type === "img" ? "#B8B8D0" : "#B8B8D0";
+    }
     return backColor;
   };
 

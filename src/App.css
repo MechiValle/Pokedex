@@ -1,5 +1,5 @@
 body {
-  background: #efefef;
+  background: black;
   padding-top: 30px;
 }
 
@@ -45,10 +45,15 @@ body {
   color: white;
 }
 
+@font-face {
+  font-family: Pokemon-Solid;
+  src: url(Pokemon\ Solid.ttf);
+}
+
 h1 {
   font-size: 3em;
   -webkit-text-stroke: 1px black;
-  font-family: "Pokemon Solid", sans-serif;
+  font-family: Pokemon-Solid;
   letter-spacing: 2px;
 }
 

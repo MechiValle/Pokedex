@@ -18,9 +18,6 @@ const Pokedex = (props) => {
   return (
     <div>
       <div>
-        <style>
-          @import url('http://fonts.cdnfonts.com/css/pokemon-solid')
-        </style>
         <div className="header">
           <h1>Pokedex</h1>
           <Pagination

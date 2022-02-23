@@ -286,3 +286,36 @@ p {
     padding: 10px;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .pokedex-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 18px;
+    padding: 10px;
+  }
+
+  .pokemon-data-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 3%;
+    width: 40%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    min-width: 380px;
+    max-width: 380px;
+    padding: 10px 10px 10px 10px;
+    flex: 1;
+    align-items: center;
+    background-color: #fb1b1b;
+  }
+
+
+
+}

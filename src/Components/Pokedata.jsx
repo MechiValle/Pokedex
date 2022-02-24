@@ -28,6 +28,9 @@ const Pokedata = (props) => {
     flavor_text_entries: {
       1: {
         flavor_text: "",
+        language:{
+          name: ""
+        }
       },
     },
   });
@@ -55,17 +58,24 @@ const Pokedata = (props) => {
     fetchSpecies();
   }, []);
 
-  console.log(pokemonData);
-  console.log(speciesData);
 
   const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`;
 
-
+console.log(speciesData);
   let pokemonDescription; 
+  let filter;
+  let toArray;
   if (speciesData !== undefined){
-  pokemonDescription = speciesData.flavor_text_entries[1].flavor_text;
-  }
 
+    toArray = Object.values(speciesData.flavor_text_entries)
+    filter = toArray.filter(
+    (text) => text.language.name === "en"
+  );
+  const flavorTextEntry = filter.length > 0 ? filter[0] : {};
+  console.log(flavorTextEntry);
+    
+  pokemonDescription = flavorTextEntry.flavor_text;
+  }
 
   return (
     <div>

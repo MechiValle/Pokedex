@@ -1,10 +1,12 @@
 import React from "react";
+import pokelogo from "../Images/pokelogo.png";
 
 const Home = () => {
     
     return(
             <div className="home">
-                Home
+            <img src={pokelogo} alt="Pokemon logo" className="pokelogo"/>
+
             </div>
     );
 };

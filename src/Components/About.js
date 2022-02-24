@@ -4,7 +4,7 @@ const About = () => {
     
     return(
             <div className="about">
-                About
+                Pokedex created with Create React App.
             </div>
     );
 };

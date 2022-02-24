@@ -309,8 +309,17 @@ p {
   .pokedex-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 18px;
-    padding: 10px;
+    justify-items: center;
+  }
+
+  .pokemon-card {
+    display: flex;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    background-color: white;
+    transition: all 300ms;
+    max-width: 380px;
+    min-width: 380px;
   }
 
   .pokemon-data-display {

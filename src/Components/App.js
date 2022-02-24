@@ -10,6 +10,8 @@ import Favorite from "./Favorite";
 import Searchbar from "./Searchbar";
 import Pokedex from "./Pokedex";
 import Pokedata from "./Pokedata";
+import About from "./About";
+import Home from "./Home";
 
 import searchPokemon, { getPokemonData, getPokemons } from "./api";
 import { FavoriteProvider } from "../Contexts/favoritesContext";
@@ -44,14 +46,15 @@ export default function App() {
     } catch (err) {}
   };
 
-  const loadFavPokemons = () =>{
-    const pokemons = JSON.parse(window.localStorage.getItem(localStorageKey)) || [];
+  const loadFavPokemons = () => {
+    const pokemons =
+      JSON.parse(window.localStorage.getItem(localStorageKey)) || [];
     setFav(pokemons);
-  }
+  };
 
-  useEffect(() =>{
+  useEffect(() => {
     loadFavPokemons();
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (!searching) {
@@ -81,51 +84,52 @@ export default function App() {
   };
 
   const updateFav = (name) => {
-    const updated = [...fav]; 
+    const updated = [...fav];
     const isFav = fav.indexOf(name);
-    if(isFav >= 0){
+    if (isFav >= 0) {
       updated.splice(isFav, 1);
-    }    else{
+    } else {
       updated.push(name);
     }
     setFav(updated);
-    window.localStorage.setItem(localStorageKey, 
-      JSON.stringify(updated)
-      )
+    window.localStorage.setItem(localStorageKey, JSON.stringify(updated));
   };
 
   return (
     <Router>
-      <FavoriteProvider value={{favoritePokemons: fav, updateFav: updateFav}}>
-      <div className="nav">
-        <NavLink to="/Pokedex">Pokedex</NavLink>
-        <NavLink to="/About">About</NavLink>
-      </div>
-      <div>
-        <Favorite />
-      </div>
-      <Routes>
-        <Route
-          path="/Pokedex"
-          element={
-            <div className="App">
-              <Searchbar onSearch={onSearch} />
-              {notFound ? (
-                <div className="not-found-text">Pokemon not found</div>
-              ) : (
-                <Pokedex
-                  loading={loading}
-                  pokemons={pokemons}
-                  page={page}
-                  setPage={setPage}
-                  total={total}
-                />
-              )}
-            </div>
-          }
-        />
-        <Route path="/Pokemon/:name" element={<Pokedata/>} />
-      </Routes>
+      <FavoriteProvider value={{ favoritePokemons: fav, updateFav: updateFav }}>
+        <div className="nav">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/Pokedex">Pokedex</NavLink>
+          <NavLink to="/About">About</NavLink>
+        </div>
+        <div>
+          <Favorite />
+        </div>
+        <Routes>
+          <Route
+            path="/Pokedex"
+            element={
+              <div className="App">
+                <Searchbar onSearch={onSearch} />
+                {notFound ? (
+                  <div className="not-found-text">Pokemon not found</div>
+                ) : (
+                  <Pokedex
+                    loading={loading}
+                    pokemons={pokemons}
+                    page={page}
+                    setPage={setPage}
+                    total={total}
+                  />
+                )}
+              </div>
+            }
+          />
+          <Route path="/Pokemon/:name" element={<Pokedata />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
       </FavoriteProvider>
     </Router>
   );

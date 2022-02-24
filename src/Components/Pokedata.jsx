@@ -60,11 +60,6 @@ const Pokedata = (props) => {
 
   const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`;
 
-  // let pokemonDescription = () => {
-  //   speciesData.flavor_text_entries[0].filter(e => e.language.name === "en").map(e => e.flavor_text)
-  // }
-
-  // let description = pokemonDescription()
 
   let pokemonDescription; 
   if (speciesData !== undefined){

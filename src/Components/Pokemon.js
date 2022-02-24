@@ -1,6 +1,6 @@
 import React from "react";
-import { Route, Routes, Link } from "react-router-dom";
-import FavoriteContext from "./favoritesContext";
+import { Link } from "react-router-dom";
+import FavoriteContext from "../Contexts/favoritesContext";
 const { useContext } = React;
 
 const Pokemon = (props) => {

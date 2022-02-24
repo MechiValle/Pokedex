@@ -1,8 +1,6 @@
 import React from "react";
-import { Route, Routes, Link, Router, Switch } from "react-router-dom";
 import Pokemon from "./Pokemon";
 import Pagination from "./Pagination";
-import Pokedata from "./Pokedata";
 
 const Pokedex = (props) => {
   const { pokemons, page, setPage, total, loading } = props;
@@ -18,7 +16,7 @@ const Pokedex = (props) => {
   };
 
   return (
-          <div>
+          <>
             <div>
               <div className="header">
                 <h1>Pokedex</h1>
@@ -40,7 +38,7 @@ const Pokedex = (props) => {
                 </div>
               )}
             </div>
-          </div>
+            </>
   );
 };
 

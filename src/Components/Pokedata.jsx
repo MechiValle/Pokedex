@@ -50,8 +50,8 @@ const Pokedata = (props) => {
     } catch (err) {}
   };
 
-  useEffect(() => {
-    fetchPokemon();
+  useEffect( async () => {
+    await fetchPokemon();
     fetchSpecies();
   }, []);
 
@@ -66,8 +66,10 @@ const Pokedata = (props) => {
 
   // let description = pokemonDescription()
 
-  let pokemonDescription = speciesData.flavor_text_entries[1].flavor_text;
-
+  let pokemonDescription; 
+  if (speciesData !== undefined){
+  pokemonDescription = speciesData.flavor_text_entries[1].flavor_text;
+  }
 
 
   return (
@@ -87,7 +89,7 @@ const Pokedata = (props) => {
             </div>
 
             <div className="description-text">
-              <p>{pokemonDescription}</p>
+              <p>{pokemonDescription ? pokemonDescription : "No description available"}</p>
 
               <p>Base experience: {pokemonData.base_experience}</p>
               <p>Ability: {pokemonData.abilities[0].ability.name}</p>

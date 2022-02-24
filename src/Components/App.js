@@ -3,17 +3,16 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
   NavLink,
 } from "react-router-dom";
-import "./App.css";
+import "../Styles/App.css";
 import Favorite from "./Favorite";
 import Searchbar from "./Searchbar";
 import Pokedex from "./Pokedex";
 import Pokedata from "./Pokedata";
 
 import searchPokemon, { getPokemonData, getPokemons } from "./api";
-import { FavoriteProvider } from "./favoritesContext";
+import { FavoriteProvider } from "../Contexts/favoritesContext";
 
 const { useState, useEffect } = React;
 const localStorageKey = "favorite_pokemon";

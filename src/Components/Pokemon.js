@@ -26,7 +26,7 @@ const Pokemon = (props) => {
     normal: '#A8A77A',
     fire: '#EE8130',
     water: '#6390F0',
-    electric: '#F7D02C',
+    electric: '#fdcb00',
     grass: '#7AC74C',
     ice: '#96D9D6',
     fighting: '#C22E28',
@@ -57,6 +57,9 @@ const Pokemon = (props) => {
  
 const color = colors[type];
   
+console.log(type1)
+console.log(type2)
+
 
   return (
     <div
@@ -82,8 +85,8 @@ const color = colors[type];
 
         <div className="card-bottom">
           <div className="pokemon-type">
-                <div className="pokemon-type-text">
-                  {type1} {type2}
+                <div >
+                  <span className="pokemon-type-text">{type1}</span> <span className="pokemon-type-text">{type2 ? type2 : null}</span>
                 </div>
           </div>
           <button className="fav-btn" onClick={clickHeart}>

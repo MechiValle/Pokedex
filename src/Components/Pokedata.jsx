@@ -63,7 +63,7 @@ const Pokedata = (props) => {
     normal: '#A8A77A',
     fire: '#EE8130',
     water: '#6390F0',
-    electric: '#F7D02C',
+    electric: '#F8D030',
     grass: '#7AC74C',
     ice: '#96D9D6',
     fighting: '#C22E28',
@@ -88,8 +88,6 @@ const Pokedata = (props) => {
   const type1 = pokeTypes.length > 0 ? pokeTypes[0] : {};
   const type2 = pokeTypes.length > 0 ? pokeTypes[1] : {};
 
-console.log(type1);
-console.log(type2);
 
 
 	const type = mainTypes.find(type => type1.indexOf(type) > -1);
@@ -136,10 +134,11 @@ const color = colors[type];
               <p>{pokemonDescription ? pokemonDescription : "No description available"}</p>
 
               <p>Base experience: {pokemonData.base_experience}</p>
-              <p>Ability: {pokemonData.abilities[0].ability.name}</p>
+              <p className="pokemon-type-text">Ability: {pokemonData.abilities[0].ability.name}</p>
 
               <p>Weight: {pokemonData.weight}</p>
-              <p>Type: {type1} {type2}</p>
+              <p className="pokemon-type-text">Type: {type1}</p>
+              <p className="pokemon-type-text"> Sub-type: {type2 ? type2 : "None"}</p>
             </div>
           </div>
         </>

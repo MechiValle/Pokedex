@@ -43,14 +43,20 @@ const Pokemon = (props) => {
     fairy: '#D685AD',
   };
 
+
   const mainTypes = Object.keys(colors);
 
   let typeArray = Object.values(pokemon.types)
 
   const pokeTypes = typeArray.map(type => type.type.name);
-	const type = mainTypes.find(type => pokeTypes.indexOf(type) > -1);
+  const type1 = pokeTypes.length > 0 ? pokeTypes[0] : {};
+  const type2 = pokeTypes.length > 0 ? pokeTypes[1] : {};
 
-  const color = colors[type];
+	const type = mainTypes.find(type => type1.indexOf(type) > -1);
+
+ 
+const color = colors[type];
+  
 
   return (
     <div
@@ -76,13 +82,9 @@ const Pokemon = (props) => {
 
         <div className="card-bottom">
           <div className="pokemon-type">
-            {pokemon.types.map((type, index) => {
-              return (
-                <div className="pokemon-type-text" key={index}>
-                  {type.type.name}
+                <div className="pokemon-type-text">
+                  {type1} {type2}
                 </div>
-              );
-            })}
           </div>
           <button className="fav-btn" onClick={clickHeart}>
             <div>{heart}</div>

@@ -85,13 +85,19 @@ const Pokedata = (props) => {
   let typeArray = Object.values(pokemonData.types)
 
   const pokeTypes = typeArray.map(type => type.type.name);
-	const type = mainTypes.find(type => pokeTypes.indexOf(type) > -1);
+  const type1 = pokeTypes.length > 0 ? pokeTypes[0] : {};
+  const type2 = pokeTypes.length > 0 ? pokeTypes[1] : {};
 
-  const color = colors[type];
+console.log(type1);
+console.log(type2);
+
+
+	const type = mainTypes.find(type => type1.indexOf(type) > -1);
 
  
-console.log(type)
-console.log(pokeTypes.indexOf(type))
+const color = colors[type];
+
+ 
 
 
   const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`;
@@ -133,7 +139,7 @@ console.log(pokeTypes.indexOf(type))
               <p>Ability: {pokemonData.abilities[0].ability.name}</p>
 
               <p>Weight: {pokemonData.weight}</p>
-              <p>Type: {pokemonData.types[0].type.name}</p>
+              <p>Type: {type1} {type2}</p>
             </div>
           </div>
         </>

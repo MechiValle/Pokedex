@@ -22,54 +22,41 @@ const Pokemon = (props) => {
     updateFav(pokemon.name);
   };
 
-  const getBackColor = (pokemon, type) => {
-    let backColor = type === "img" ? "#fffcdb" : "#EEE8AA";
-    const pokeTypes = pokemon.types.map((i) => i.type.name);
-    if (pokeTypes.includes("fire")) {
-      backColor = type === "img" ? "#f6b282" : "#f6b282";
-    } else if (pokeTypes.includes("grass")) {
-      backColor = type === "img" ? "#aede96" : "#aede96";
-    } else if (pokeTypes.includes("water")) {
-      backColor = type === "img" ? "#c2d2f9" : "#c2d2f9";
-    } else if (pokeTypes.includes("bug")) {
-      backColor = type === "img" ? "#d3db8f" : "#d3db8f";
-    } else if (pokeTypes.includes("normal")) {
-      backColor = type === "img" ? "#d3d3bb" : "#d3d3bb";
-    } else if (pokeTypes.includes("electric")) {
-      backColor = type === "img" ? "#F8D030" : "#F8D030";
-    } else if (pokeTypes.includes("ground")) {
-      backColor = type === "img" ? "#E0C068" : "#E0C068";
-    } else if (pokeTypes.includes("fairy")) {
-      backColor = type === "img" ? "#f6ccd5" : "#f6ccd5";
-    } else if (pokeTypes.includes("ghost")) {
-      backColor = type === "img" ? "#705898" : "#705898";
-    } else if (pokeTypes.includes("fighting")) {
-      backColor = type === "img" ? "#d9827e" : "#d9827e";
-    } else if (pokeTypes.includes("rock")) {
-      backColor = type === "img" ? "#B8A038" : "#B8A038";
-    } else if (pokeTypes.includes("poison")) {
-      backColor = type === "img" ? "#cf9fcf" : "#cf9fcf";
-    } else if (pokeTypes.includes("psychic")) {
-      backColor = type === "img" ? "#fa9ab7" : "#fa9ab7";
-    } else if (pokeTypes.includes("ice")) {
-      backColor = type === "img" ? "#f3f6f4" : "#f3f6f4";
-    } else if (pokeTypes.includes("dark")) {
-      backColor = type === "img" ? "#9a8a7e" : "#9a8a7e";
-    } else if (pokeTypes.includes("flying")) {
-      backColor = type === "img" ? "#A890F0" : "#A890F0";
-    } else if (pokeTypes.includes("dragon")) {
-      backColor = type === "img" ? "#e2d7fd" : "#e2d7fd";
-    } else if (pokeTypes.includes("steel")) {
-      backColor = type === "img" ? "#B8B8D0" : "#B8B8D0";
-    }
-    return backColor;
+  const colors = {
+    normal: '#A8A77A',
+    fire: '#EE8130',
+    water: '#6390F0',
+    electric: '#F7D02C',
+    grass: '#7AC74C',
+    ice: '#96D9D6',
+    fighting: '#C22E28',
+    poison: '#A33EA1',
+    ground: '#E2BF65',
+    flying: '#A98FF3',
+    psychic: '#F95587',
+    bug: '#A6B91A',
+    rock: '#B6A136',
+    ghost: '#735797',
+    dragon: '#6F35FC',
+    dark: '#705746',
+    steel: '#B7B7CE',
+    fairy: '#D685AD',
   };
+
+  const mainTypes = Object.keys(colors);
+
+  let typeArray = Object.values(pokemon.types)
+
+  const pokeTypes = typeArray.map(type => type.type.name);
+	const type = mainTypes.find(type => pokeTypes.indexOf(type) > -1);
+
+  const color = colors[type];
 
   return (
     <div
       className="pokemon-card"
       /*onClick={redirectToWiki}*/
-      style={{ backgroundColor: getBackColor(pokemon) }}
+      style={{ backgroundColor: color }}
     >
       <div className="pokemon-img-container">
         <img

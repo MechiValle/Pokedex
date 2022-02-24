@@ -59,9 +59,43 @@ const Pokedata = (props) => {
   }, []);
 
 
+  const colors = {
+    normal: '#A8A77A',
+    fire: '#EE8130',
+    water: '#6390F0',
+    electric: '#F7D02C',
+    grass: '#7AC74C',
+    ice: '#96D9D6',
+    fighting: '#C22E28',
+    poison: '#A33EA1',
+    ground: '#E2BF65',
+    flying: '#A98FF3',
+    psychic: '#F95587',
+    bug: '#A6B91A',
+    rock: '#B6A136',
+    ghost: '#735797',
+    dragon: '#6F35FC',
+    dark: '#705746',
+    steel: '#B7B7CE',
+    fairy: '#D685AD',
+  };
+
+  const mainTypes = Object.keys(colors);
+
+  let typeArray = Object.values(pokemonData.types)
+
+  const pokeTypes = typeArray.map(type => type.type.name);
+	const type = mainTypes.find(type => pokeTypes.indexOf(type) > -1);
+
+  const color = colors[type];
+
+ 
+console.log(type)
+console.log(pokeTypes.indexOf(type))
+
+
   const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`;
 
-console.log(speciesData);
   let pokemonDescription; 
   let filter;
   let toArray;
@@ -72,7 +106,6 @@ console.log(speciesData);
     (text) => text.language.name === "en"
   );
   const flavorTextEntry = filter.length > 0 ? filter[0] : {};
-  console.log(flavorTextEntry);
     
   pokemonDescription = flavorTextEntry.flavor_text;
   }
@@ -83,7 +116,7 @@ console.log(speciesData);
         <h3>loading...</h3>
       ) : (
         <>
-          <div className="pokemon-data-display">
+          <div className="pokemon-data-display" style={{backgroundColor: color}}>
             <h3 className="data-name">{pokemonData.name}</h3>
             <div className="img-container">
               <img

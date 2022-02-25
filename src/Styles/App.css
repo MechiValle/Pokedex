@@ -269,6 +269,7 @@ p {
 
 .pagination-btn-left,
 .pagination-btn-right {
+  color: white;
   background: none;
   border: none;
 }

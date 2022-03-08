@@ -21,14 +21,6 @@ p {
   color: white;
 }
 
-.searchbar-container {
-  display: flex;
-  width: 270px;
-  margin: 0px auto;
-  padding: 0 20px;
-  align-items: center;
-}
-
 .searchbar {
   background-color: white;
   margin-right: 20px;
@@ -43,15 +35,6 @@ p {
 
 .searchbar input:focus {
   outline: none;
-}
-
-.searchbar-btn button {
-  background-color: #363636;
-  border: none;
-  border-radius: 10px;
-  height: 100%;
-  color: white;
-  padding: 10px 12px;
 }
 
 .header {

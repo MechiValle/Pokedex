@@ -1,5 +1,6 @@
 import React from "react";
 import { HeaderElements } from "./styles/HeaderElements";
+import {Button} from "./styles/Button.js"
 const {useState} = React;
 
 const Searchbar = (props) => {
@@ -29,9 +30,7 @@ const Searchbar = (props) => {
         }}
         />
       </div>
-      <div className="searchbar-btn">
-          <button onClick={onClick}>Search</button>
-      </div>
+          <Button onClick={onClick}>Search</Button>
     </HeaderElements>
   );
 };

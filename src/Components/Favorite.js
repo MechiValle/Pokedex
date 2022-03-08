@@ -1,15 +1,15 @@
 import React from "react";
 import FavoriteContext from "../Contexts/favoritesContext";
-
+import { HeaderElements } from "./styles/HeaderElements";
 
 const {useContext} = React;
 
 const Favorite = () => {
     const {favoritePokemons} = useContext(FavoriteContext)
     return(
-            <div className="favorite">
+            <HeaderElements>
                 <h3>&#10084;&#65039; {favoritePokemons.length}</h3>
-            </div>
+            </HeaderElements>
     );
 };
 

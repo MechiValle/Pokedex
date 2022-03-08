@@ -21,23 +21,6 @@ p {
   color: white;
 }
 
-.nav {
-  display: flex;
-  flex-direction: row;
-  width: 270px;
-  margin: 0px auto;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.favorite {
-  display: flex;
-  width: 270px;
-  margin: 0px auto;
-  align-items: center;
-  justify-content: center;
-}
-
 .searchbar-container {
   display: flex;
   width: 270px;

@@ -12,7 +12,7 @@ import Pokedex from "./Pokedex";
 import Pokedata from "./Pokedata";
 import About from "./About";
 import Home from "./Home";
-
+import { NavBar } from "./styles/NavBar";
 import searchPokemon, { getPokemonData, getPokemons } from "./api";
 import { FavoriteProvider } from "../Contexts/favoritesContext";
 
@@ -98,11 +98,11 @@ export default function App() {
   return (
     <Router>
       <FavoriteProvider value={{ favoritePokemons: fav, updateFav: updateFav }}>
-        <div className="nav">
+        <NavBar>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/Pokedex">Pokedex</NavLink>
           <NavLink to="/About">About</NavLink>
-        </div>
+        </NavBar>
         <div>
           <Favorite />
         </div>

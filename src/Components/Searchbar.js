@@ -1,11 +1,10 @@
 import React from "react";
-import {searchPokemon} from './api';
+import { HeaderElements } from "./styles/HeaderElements";
 const {useState} = React;
 
 const Searchbar = (props) => {
     const {onSearch} = props;
     const [search, setSearch] = useState('');
-    const [pokemon, setPokemon] = useState();
     const onChange = (e) => {
         setSearch(e.target.value.toLowerCase());
         if(e.target.value.length === 0){
@@ -19,7 +18,7 @@ const Searchbar = (props) => {
 
     
   return (
-    <div className="searchbar-container">
+    <HeaderElements>
       <div className="searchbar">
         <input placeholder="Search Pokemon..." 
         onChange = {onChange}
@@ -33,7 +32,7 @@ const Searchbar = (props) => {
       <div className="searchbar-btn">
           <button onClick={onClick}>Search</button>
       </div>
-    </div>
+    </HeaderElements>
   );
 };
 

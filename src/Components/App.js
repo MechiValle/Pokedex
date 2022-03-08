@@ -11,8 +11,8 @@ import Pokedex from "./Pokedex";
 import Pokedata from "./Pokedata";
 import About from "./About";
 import Home from "./Home";
-import { NavBar } from "./styles/NavBar";
-import { StyledNavLink } from "./styles/StyledNavLink";
+import { NavBar } from "../Styles/NavBar";
+import { StyledNavLink } from "../Styles/StyledNavLink";
 import searchPokemon, { getPokemonData, getPokemons } from "./api";
 import { FavoriteProvider } from "../Contexts/favoritesContext";
 

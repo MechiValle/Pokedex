@@ -1,6 +1,6 @@
 import React from "react";
-import { HeaderElements } from "./styles/HeaderElements";
-import {Button} from "./styles/Button.js"
+import { HeaderElements } from "../Styles/HeaderElements";
+import {Button} from "../Styles/Button.js"
 const {useState} = React;
 
 const Searchbar = (props) => {

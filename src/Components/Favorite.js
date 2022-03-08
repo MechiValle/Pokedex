@@ -1,6 +1,6 @@
 import React from "react";
 import FavoriteContext from "../Contexts/favoritesContext";
-import { HeaderElements } from "./styles/HeaderElements";
+import { HeaderElements } from "../Styles/HeaderElements";
 
 const {useContext} = React;
 

@@ -5,13 +5,9 @@ body {
 }
 
 a {
-  color: white;
   text-decoration: none;
 }
 
-a:visited {
-  color: red;
-}
 .fav-btn {
   background: none;
   border: none;

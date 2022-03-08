@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  NavLink,
 } from "react-router-dom";
 import "../Styles/App.css";
 import Favorite from "./Favorite";
@@ -13,6 +12,7 @@ import Pokedata from "./Pokedata";
 import About from "./About";
 import Home from "./Home";
 import { NavBar } from "./styles/NavBar";
+import { StyledNavLink } from "./styles/StyledNavLink";
 import searchPokemon, { getPokemonData, getPokemons } from "./api";
 import { FavoriteProvider } from "../Contexts/favoritesContext";
 
@@ -99,9 +99,9 @@ export default function App() {
     <Router>
       <FavoriteProvider value={{ favoritePokemons: fav, updateFav: updateFav }}>
         <NavBar>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/Pokedex">Pokedex</NavLink>
-          <NavLink to="/About">About</NavLink>
+          <StyledNavLink to="/">Home</StyledNavLink>
+          <StyledNavLink to="/Pokedex">Pokedex</StyledNavLink>
+          <StyledNavLink to="/About">About</StyledNavLink>
         </NavBar>
         <div>
           <Favorite />

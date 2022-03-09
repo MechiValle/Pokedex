@@ -6,7 +6,8 @@ const About = () => {
     <div className="home">
       <Text>Pokedex created with Create React App.</Text>
       <Text>
-        API provided by <a href="https://pokeapi.co/" target="_blank">
+        API provided by{" "}
+        <a href="https://pokeapi.co/" target="_blank">
           PokeAPI
         </a>
         .

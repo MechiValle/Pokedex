@@ -1,10 +1,10 @@
 import React from "react";
 import Pokemon from "./Pokemon";
 import Pagination from "./Pagination";
+import { PokedexTitle } from "../Styles/PokedexTitle";
 
 const Pokedex = (props) => {
   const { pokemons, page, setPage, total, loading } = props;
-  const { pokemon } = props;
   const lastPage = () => {
     const nextPage = Math.max(page - 1, 0);
     setPage(nextPage);
@@ -19,7 +19,7 @@ const Pokedex = (props) => {
           <>
             <div>
               <div className="header">
-                <h1>Pokedex</h1>
+                <PokedexTitle>Pokedex</PokedexTitle>
                 <Pagination
                   page={page + 1}
                   totalPages={total}

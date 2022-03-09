@@ -46,18 +46,6 @@ p {
   color: white;
 }
 
-@font-face {
-  font-family: Pokemon-Solid;
-  src: url(Fonts/Pokemon\ Solid.ttf);
-}
-
-h1 {
-  font-size: 3em;
-  -webkit-text-stroke: 1px black;
-  font-family: Pokemon-Solid;
-  letter-spacing: 2px;
-}
-
 h3 {
   color: white;
 }
@@ -86,9 +74,7 @@ h3 {
       2px 2px 5px rgba(0,0,0,0.65);
 }
 
-.pokemon-card:hover {
-  transform: scale(1.1);
-}
+
 
 .pokemon-img {
   width: 80px;
@@ -102,7 +88,7 @@ h3 {
   border-radius: 3%;
   width: 40%;
   height: 70%;
-  position: absolute;
+  position: relative;
   top: 0;
   bottom: 0;
   left: 0;
@@ -113,7 +99,6 @@ h3 {
   padding: 10px 10px 10px 10px;
   flex: 1;
   align-items: center;
-  background-color: #fb1b1b;
 
   color: #fff;
   font-weight: bold;
@@ -165,6 +150,7 @@ h3 {
 .home {
   display: flex;
   flex-direction: column;
+  padding: 70px 0;
   align-items: center;
   text-align: center;
 }

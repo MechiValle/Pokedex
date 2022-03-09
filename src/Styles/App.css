@@ -307,6 +307,7 @@ p {
     left: 0;
     right: 0;
     margin: auto;
+    margin-top: 140px;
     min-width: 380px;
     max-width: 380px;
     padding: 10px 10px 10px 10px;

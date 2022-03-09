@@ -30,7 +30,7 @@ const Searchbar = (props) => {
         }}
         />
       </div>
-          <Button onClick={onClick}>Search</Button>
+          <Button onClick={onClick}>SEARCH</Button>
     </HeaderElements>
   );
 };

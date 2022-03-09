@@ -9,6 +9,9 @@ color: white;
 font-weight: bold;
 padding: 10px 12px;
 box-shadow: 0 .2em lightgray; 
+font-family: 'SF Pixelate';
+
+
 
 &:active{
     box-shadow: none;

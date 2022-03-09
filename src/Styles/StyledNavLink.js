@@ -15,6 +15,8 @@ background-color: lightgray;
 border-radius: 7px;
 box-shadow: 0 .2em gray; 
 
+font-family: 'SF Pixelate';
+
 color: black;
 font-weight: bold;
 text-decoration: none;

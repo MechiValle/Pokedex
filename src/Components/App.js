@@ -11,6 +11,7 @@ import Pokedex from "./Pokedex";
 import Pokedata from "./Pokedata";
 import About from "./About";
 import Home from "./Home";
+import FontStyles from '../FontStyles';
 import { NavBar } from "../Styles/NavBar";
 import { StyledNavLink } from "../Styles/StyledNavLink";
 import searchPokemon, { getPokemonData, getPokemons } from "./api";
@@ -97,6 +98,7 @@ export default function App() {
 
   return (
     <Router>
+      <FontStyles />
       <FavoriteProvider value={{ favoritePokemons: fav, updateFav: updateFav }}>
         <NavBar>
           <StyledNavLink to="/">Home</StyledNavLink>

@@ -1,14 +1,16 @@
 import React from "react";
+import { Arrows } from "../Styles/Arrows";
+import { PaginationText } from "../Styles/PaginationText";
 
 const Pagination = (props) =>{
     const {onLeftClick, onRightClick, page, totalPages} = props;
     return (
         <div className="pagination">
-            <button className="pagination-btn-left" onClick={onLeftClick}>&#9194;</button>
-            <div>
+            <Arrows onClick={onLeftClick}>&#x3c;</Arrows>
+            <PaginationText>
                 {page} of {totalPages}
-            </div>
-            <button className="pagination-btn-right" onClick={onRightClick}>&#9193;</button>
+            </PaginationText>
+            <Arrows onClick={onRightClick}>&#x3e;</Arrows>
         </div>
     )
 }

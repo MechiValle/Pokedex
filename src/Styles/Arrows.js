@@ -1,0 +1,35 @@
+import styled from "styled-components"
+export const Arrows = styled.button`
+
+display: flex;
+width: 30px;
+height: 30px;
+align-items: center;
+justify-content: center;
+margin: 5px;
+padding: 10px 10px 10px 10px ;
+background-color: lightgray;
+border-radius: 7px;
+box-shadow: 0 .2em gray; 
+
+font-family: 'SF Pixelate';
+
+color: black;
+font-weight: bold;
+text-decoration: none;
+
+&:visited{
+    color: black; 
+}
+
+&:hover{
+    color: white;
+}
+
+&:active{
+    box-shadow: none;
+	position: relative;
+	top: .2em;
+}
+
+`

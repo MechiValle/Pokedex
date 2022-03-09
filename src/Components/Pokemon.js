@@ -7,13 +7,6 @@ const Pokemon = (props) => {
   const { pokemon } = props;
   const { favoritePokemons, updateFav } = useContext(FavoriteContext);
 
-  /*const redirectToWiki = () => {
-    window.open(
-      `https://bulbapedia.bulbagarden.net/wiki/${pokemon.name}_(Pokémon)`,
-      "_blank"
-    );
-  };*/
-
   const toFave = "🖤";
   const faved = "❤️";
   const heart = favoritePokemons.includes(pokemon.name) ? faved : toFave;
@@ -64,7 +57,6 @@ console.log(type2)
   return (
     <div
       className="pokemon-card"
-      /*onClick={redirectToWiki}*/
       style={{ backgroundColor: color }}
     >
       <div className="pokemon-img-container">

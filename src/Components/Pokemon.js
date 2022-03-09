@@ -9,10 +9,10 @@ const Pokemon = (props) => {
 
   const toFave = "🖤";
   const faved = "❤️";
-  const heart = favoritePokemons.includes(pokemon.name) ? faved : toFave;
+  const heart = favoritePokemons.includes(pokemon) ? faved : toFave;
   const clickHeart = (e) => {
     e.preventDefault();
-    updateFav(pokemon.name);
+    updateFav(pokemon);
   };
 
   const colors = {
@@ -50,9 +50,6 @@ const Pokemon = (props) => {
  
 const color = colors[type];
   
-console.log(type1)
-console.log(type2)
-
 
   return (
     <div

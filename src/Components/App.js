@@ -11,6 +11,7 @@ import Pokedex from "./Pokedex";
 import Pokedata from "./Pokedata";
 import About from "./About";
 import Home from "./Home";
+import MyFavs from "./MyFavs";
 import FontStyles from '../FontStyles';
 import { NavBar } from "../Styles/NavBar";
 import { StyledNavLink } from "../Styles/StyledNavLink";
@@ -96,6 +97,7 @@ export default function App() {
     window.localStorage.setItem(localStorageKey, JSON.stringify(updated));
   };
 
+
   return (
     <Router>
       <FontStyles />
@@ -130,7 +132,9 @@ export default function App() {
           />
           <Route path="/Pokemon/:name" element={<Pokedata />} />
           <Route path="/About" element={<About />} />
+          <Route path="/MyFavs" element={<MyFavs />} />
           <Route path="/" element={<Home />} />
+
         </Routes>
       </FavoriteProvider>
     </Router>

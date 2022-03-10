@@ -5,15 +5,13 @@ import { FavoriteProvider } from "../Contexts/favoritesContext";
 
 const MyFavs = (props) => {
   const { loading } = props;
-  const { useContext, } = React;
+  const { useContext} = React;
   const { favoritePokemons } = useContext(FavoriteContext);
-
-  const localStorageKey = "favorite_pokemon";
-
 
   return (
     <div>
       <FavoriteProvider value={{ favoritePokemons }}>
+
         {loading ? (
           <div className="loading">Loading...</div>
         ) : (

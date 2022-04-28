@@ -9,11 +9,11 @@ const Home = () => {
       {/* <img src={pokelogo} alt="Pokemon logo" className="pokelogo" /> */}
       <Text>Click on any Pokemon's name to access its information</Text>
       <Text>
-        You can add a Pokemon to your favorites counter by clicking on the heart
-        at the bottom of each individual card.
+        You can add a Pokemon to your favorites counter by clicking the heart
+        at the bottom of each entry.
       </Text>
       <Text>
-        Click on your favorites counter to display your favorite Pokemon.
+        Click your favorites counter to display your favorite Pokemon.
       </Text>
     </div>
   );
